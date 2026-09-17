@@ -2,7 +2,8 @@ import sqlite3
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def analye_and_plot():
+
+def analyze_and_plot():
     conn = sqlite3.connect("weather_data.db")
     
     # Query data back out of SQLite using pandas
@@ -22,9 +23,10 @@ def analye_and_plot():
         plt.title("Top 10 warmest cities")
         plt.xlabel("Temperature")
         plt.xticks(rotation=45)
-        plt.tight_loyout()
+        plt.tight_layout()
         plt.savefig("weather_summary_plot.png")
         print("Saved plot to 'weather_summary_plot.png'")
-        
-        if __name__ == "__main__":
-            analyze_and_plot()
+
+
+if __name__ == "__main__":
+    analyze_and_plot()
